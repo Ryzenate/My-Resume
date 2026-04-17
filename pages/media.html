@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui; margin: 0; background: #f7f7f9; line-height: 1.6; }
+    header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; }
+    h1 { margin: 0; color: #004b8d; }
+    h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+    section { background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 2rem; }
+    main { padding: 2rem; max-width: 900px; margin: auto; }
+    .navbar {
+		    position: sticky;
+  top: 0;
+  z-index: 1000;
+      background: #004b8d;
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar a:hover { text-decoration: underline; }
+
+    img.demo-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .embed-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="impact.html">Impact</a>
+  <a href="inventions.html">Inventions</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="resume.html">Resume</a>
+  <!-- <a href="projects.html">Projects</a> -->
+</nav>
+
+<header>
+  <h1>Media Page</h1>
+</header>
+
+<main>
+
+  <section>
+    <h2>Watchport Manager</h2>
+    <p>Watchport Manager was delivered to customers around the world and included with all sensors shipped by the company.</p>
+	<img src="media/WatchportManagerFlyer1.png" alt="Watchport Manager">
+    <pre>media/WatchportManagerFlyer1.png</pre>
+  </section>
+
+  <section>
+    <h2>Add more here</h2>
+    <p>You can also load images directly from the web:</p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fronalpstock_big.jpg/640px-Fronalpstock_big.jpg"
+         alt="External Image Example"
+         class="demo-img">
+  </section>
+
+  <section>
+    <h2>YouTube Video Embed</h2>
+    <p>This is how to embed a responsive YouTube video:</p>
+
+    <div class="embed-container">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              frameborder="0"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>PDF Embed Example</h2>
+    <p>You can embed a PDF directly into the page:</p>
+
+    <iframe src="../documents/sample.pdf"
+            width="100%"
+            height="500px"
+            style="border: 1px solid #ccc; border-radius: 6px;">
+    </iframe>
+
+    <p>Place your PDF here:</p>
+    <pre>/documents/sample.pdf</pre>
+  </section>
+
+  <section>
+    <h2>Google Maps Embed</h2>
+    <p>Embedding a map is easy too:</p>
+
+    <div class="embed-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110512.03767491842!2d-97.833!3d30.2672"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

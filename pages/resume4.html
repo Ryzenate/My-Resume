@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume – Principal Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui; margin: 0; background: #f7f7f9; line-height: 1.6; }
+    header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; }
+    h1 { margin: 0; color: #004b8d; }
+    h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
+    h3 { margin-top: 1.5rem; }
+    section { background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 2rem; }
+    main { padding: 2rem; max-width: 900px; margin: auto; }
+    .code-block {
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 0.75rem 0.9rem;
+      font-family: Consolas, monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    .subtle { color: #666; font-size: 0.9rem; }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      justify-content: center;
+      background: #004b8d;
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar a:hover { text-decoration: underline; }
+    
+    /* Logo styling */
+    .partner-logos {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      gap: 2.5rem; 
+      flex-wrap: wrap; 
+      opacity: 0.7;
+      margin-top: 1rem;
+    }
+    .partner-logos img {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease, opacity 0.3s ease;
+      cursor: default;
+    }
+    .partner-logos img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="impact.html">Impact</a>
+  <a href="inventions.html">Inventions</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="resume.html">Resume</a>
+</nav>
+
+<main>
+
+<section id="title" style="border: none; background: transparent; text-align: center; padding-bottom: 0; margin-bottom: 2rem;">
+  <div style="border-bottom: 1px solid #ddd; padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+    <h1 style="margin: 0; color: #004b8d; font-size: 2.5rem;">Nathan Fritsche</h1>
+    <p style="margin: 0.5rem 0 0 0; font-weight: 500;">
+      Principal Software Engineer<br>
+      AI-Assisted Diagnostics • Lab Automation • Secure SDLC • IoT Systems<br>
+      Austin, Texas
+    </p>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; opacity: 0.8;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" alt="AMD Logo" style="height: 22px; width: auto; filter: grayscale(100%);">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg" alt="Dell Logo" style="height: 38px; width: auto; filter: grayscale(100%);">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Honeywell_logo.svg" alt="Honeywell Logo" style="height: 20px; width: auto; filter: grayscale(100%);">
+    <img src="media/Digi_Logo_2c_RGB.jpg" alt="Digi International Logo" style="height: 35px; width: auto; filter: grayscale(100%);">
+  </div>
+</section>
+
+<section id="summary">
+    <h2>Professional Summary</h2>
+    <p>
+      Principal Software Engineer with expertise in AI-assisted diagnostics, secure SDLC automation, global lab automation systems,
+      and industrial IoT platforms. Proven ability to design scalable automation frameworks, predictive monitoring services, and early
+      IoT applications used worldwide. Strong background in security compliance engineering, threat modeling, CVSS scoring, and
+      automated reporting systems. Known for building maintainable, high-impact platforms that support thousands of devices, hundreds
+      of users, and multi-million-dollar customer deployments.
+    </p>
+</section>
+
+<section id="competencies">
+    <h2>Core Competencies</h2>
+    <ul>
+      <li>Lab Automation Architecture</li>
+      <li>Validation & Imaging Systems</li>
+      <li>AI‑Assisted Diagnostics & Threat Modeling</li>
+      <li>Secure SDLC & Compliance Engineering</li>
+      <li>Compliance Reporting Automation (Jira/Confluence/Python)</li>
+      <li>Industrial IoT Architecture</li>
+      <li>Predictive Monitoring & Proactive Alerting</li>
+      <li>Early IoT Platform Design (Watchport, SensorServ)</li>
+      <li>Automation Frameworks & Workflow Orchestration</li>
+      <li>Device Ecosystem Engineering (Drivers, Firmware, Apps)</li>
+      <li>High‑Volume Deployment Engineering</li>
+      <li>Technical Partner for Large‑Scale Customer Programs</li>
+    </ul>
+</section>
+
+<section id="achievements">
+    <h2>Selected Achievements</h2>
+    <ul>
+      <li><strong>AMD Lab Automation Framework (200+ users)</strong> – Modernized BIOS/graphics/platform installer workflows; reduced manual effort and improved validation speed.</li>
+      <li><strong>AI Diagnostic & Triage POC (AMD)</strong> – Demonstrated AI‑driven troubleshooting that accelerates issue identification and reduces triage time.</li>
+      <li><strong>AI Threat Modeling POC (Dell)</strong> – Automated early threat‑analysis workflows to improve security coverage and reduce manual overhead.</li>
+      <li><strong>Global Lab Automation Platform (1,000+ systems)</strong> – Standardized validation across Dell labs in the US, Taiwan, and India; improved throughput and consistency.</li>
+      <li><strong>Validation Lab Imaging Architecture (Dell)</strong> – Enabled high‑volume, repeatable provisioning; reduced setup time and configuration drift.</li>
+      <li><strong>Security Compliance Leadership (Dell)</strong> – Improved SDLC security maturity through static analysis, threat modeling, CVSS scoring, and mitigation planning.</li>
+      <li><strong>Compliance Automation System (Dell)</strong> – Automated Jira/Confluence‑based reporting for 15 engineers; eliminated hours of manual work and reduced errors.</li>
+      <li><strong>Industrial IoT Systems (24K+ devices)</strong> – Delivered reliable telemetry and monitoring across large‑scale deployments.</li>
+      <li><strong>Watchport Manager (Invented)</strong> – Early IoT monitoring app with real‑time alerts and HTTP/HTTPS dashboards; shipped worldwide.</li>
+      <li><strong>SensorServ (Invented)</strong> – Predictive monitoring Windows Service providing unattended, proactive alerting.</li>
+    </ul>
+</section>
+
+<section id="awards">
+  <h2>Awards and Recognition</h2>
+  <p><strong>Dell Inspire Award – 2024</strong><br>
+  Recognized for exceptional teamwork during a critical project phase.</p>
+  <p><strong>Dell Inspire Award – 2023</strong><br>
+  Recognized for key contributions during penetration testing.</p>
+  <p><strong>Dell Inspire Award – 2022</strong><br>
+  Recognized for advancing threat-modeling practices.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <p><strong>University of Texas at Austin — Bachelor of Science, Computer Science (In Progress)</strong><br>
+  Completed more than 100 credit hours toward the degree. Approximately 30 hours remaining.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <p>
+      <b>Nathan Fritsche</b><br>
+      Principal Software Engineer<br>
+      Austin, Texas
+    </p>
+</section>
+
+</main>
+</body>
+</html>
