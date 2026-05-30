@@ -25,7 +25,7 @@ Structured automation ecosystems, reusable module design, unattended services, c
 Drivers, firmware, application stacks, camera systems, sensor platforms, cross-layer integration.
 
 **High-Volume Deployment Engineering**
-Large-scale embedded deployments (4K–20K+ units), technical pre-sales engineering, engineering-led revenue enablement.
+Large-scale embedded deployments (4K-20K+ units), technical pre-sales engineering, engineering-led revenue enablement.
 
 **Game Development & Marketplace Monetization**
 End-to-end creation of 12 functional Roblox game experiences; custom 3D asset modeling in Blender paired with multi-modal AI pipelines (Midjourney) for public marketplace distribution and monetization; multi-platform project execution spanning Lua scripting, community Discord game applications, and text adventures.
