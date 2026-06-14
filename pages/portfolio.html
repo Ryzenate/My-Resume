@@ -14,15 +14,15 @@
     main { padding: 2rem; max-width: 900px; margin: auto; }
     .subtle { color: #666; font-size: 0.9rem; }
     .navbar {
-	  position: sticky;
-  top: 0;
-  z-index: 1000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       justify-content: center;
       background: #004b8d;
       padding: 0.75rem 1rem;
       display: flex;
       gap: 1rem;
-        flex-wrap: wrap;
+      flex-wrap: wrap;
     }
     .navbar a {
       color: white;
@@ -30,6 +30,20 @@
       font-weight: 500;
     }
     .navbar a:hover { text-decoration: underline; }
+
+    /* Style rule for the contact metadata header text */
+    .contact-bar {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .contact-bar a {
+      color: #004b8d;
+      text-decoration: none;
+    }
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -42,10 +56,14 @@
   <a href="inventions.html">Inventions</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="myresume.html">Resume</a>
-  <!-- <a href="pages/projects.html">Projects</a> -->
-</nav>
+  </nav>
 <header>
   <h1>One-Page Impact Portfolio</h1>
+  <div class="contact-bar">
+    Austin, Texas &bull; 
+    <a href="https://linkedin.com/in/nwfritsche" target="_blank" rel="noopener">linkedin.com/in/nwfritsche</a> &bull; 
+    <a href="mailto:nathanf@live.com">nathanf@live.com</a>
+  </div>
 </header>
 
 <main>
@@ -112,6 +130,5 @@
   <a href="inventions.html">Inventions</a>
   <a href="portfolio.html">Portfolio</a>
   <a href="myresume.html">Resume</a>
-  <!-- <a href="pages/projects.html">Projects</a> -->
-</nav>
+  </nav>
 </html>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: system-ui; margin: 0; background: #f7f7f9; line-height: 1.6; }
-    /* Flexbox layout to align title on the left and QR on the right */
+    /* Flexbox layout to align title group on the left and QR on the right */
     header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
     h1 { margin: 0; color: #004b8d; }
     h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
@@ -29,6 +29,20 @@
     }
     .navbar a:hover { text-decoration: underline; }
     
+    /* Style rule for the contact metadata header text */
+    .contact-bar {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .contact-bar a {
+      color: #004b8d;
+      text-decoration: none;
+    }
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
     /* Small, professional container for the top right QR placement */
     .header-qr-container {
       text-align: center;
@@ -58,7 +72,15 @@
   </nav>
 
 <header>
-  <h1>Welcome</h1>
+  <div>
+    <h1>Welcome</h1>
+    <div class="contact-bar">
+      Austin, Texas &bull; 
+      <a href="https://linkedin.com/in/nwfritsche" target="_blank" rel="noopener">linkedin.com/in/nwfritsche</a> &bull; 
+      <a href="mailto:nathanf@live.com">nathanf@live.com</a>
+    </div>
+  </div>
+  
   <div class="header-qr-container">
     <img src="pages/media/nathan_contact_qr.png" alt="QR Code" />
     <div>Scan to Email Me</div>
