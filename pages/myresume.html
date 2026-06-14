@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Fritsche - Principal Software Engineer</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --text: #334155;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        header {
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .highlight-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .highlight-list li::before {
+            content: "▪";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 1.2rem;
+        }
+
+        .job {
+            margin-bottom: 30px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .date {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .title-line {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .tech-stack {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--accent);
+            padding: 12px 15px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .tech-stack strong {
+            color: var(--primary);
+        }
+
+        .edu-section, .cert-section, .award-section {
+            margin-bottom: 15px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        @media (max-width: 600px) {
+            .job-header {
+                flex-direction: column;
+            }
+            body {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nathan Fritsche</h1>
+        <div class="contact-info">
+            <span>Austin, Texas</span>
+            <span>|</span>
+            <a href="https://www.linkedin.com/in/nwfritsche" target="_blank">linkedin.com/in/nwfritsche</a>
+            <span>|</span>
+            <a href="mailto:nathanf@live.com">nathanf@live.com</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="summary">
+            <strong>Principal Software Engineer</strong><br>
+            Engineering leader spanning chip-to-cloud architecture: embedded firmware &rarr; industrial IoT &rarr; cloud platforms &rarr; generative AI systems. 15+ years delivering automation, security validation, and AI-driven transformation across hardware validation labs, enterprise firmware ecosystems, and distributed sensor networks.
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Highlights</h2>
+        <ul class="highlight-list">
+            <li><strong>Generative AI Architecture:</strong> Designed RAG systems, agentic workflows, and MCP integrations for enterprise troubleshooting and security analytics; implemented multimodal LLM pipelines (ONNX, ROCm, DirectML) on AMD GPU/NPU hardware.</li>
+            <li><strong>Embedded-to-Cloud Integration:</strong> Architected BIOS/firmware automation for 1000+ PC labs; developed Modbus/PLC gateways, Zigbee/XBee sensor networks, and AMQP microservices for oilfield telemetry.</li>
+            <li><strong>Cross-Platform Systems:</strong> Unified Windows/Linux validation environments using WSL2, Docker, and Hyper-V; built offline Windows image servicing pipelines reducing deployment time 40%.</li>
+            <li><strong>Security Engineering:</strong> Led BIOS/firmware security validation for 16-engineer team; implemented threat modeling automation with NLP and generative AI for vulnerability response and SBOM management.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">AMD &mdash; Austin, TX (Contractor)</span>
+                <span class="date">Nov 2024 &ndash; Present</span>
+            </div>
+            <div class="title-line">AI Lab Validation & Automation Engineer</div>
+            <ul>
+                <li>Spearheaded AI hardware validation across Windows/Linux using ROCm, DirectML, and ONNX for multimodal/LLM benchmarking on AMD GPU/NPU platforms.</li>
+                <li>Architected RAG proof-of-concept to triage complex engineering issues, accelerating diagnostic workflows for technical staff.</li>
+                <li>Engineered REST API clients and automation tools in Python/C#/.NET using OOP principles to eliminate manual data collection and reporting.</li>
+                <li>Automated AI benchmarking on Systems Under Test via Apex Automation; identified RAG opportunities across 5+ engineering business units.</li>
+                <li>Developed Node.js/PowerShell "Compliance Homepage" centralizing lab standards enforcement and operational workflows.</li>
+                <li>Created offline Windows image servicing process with PowerShell scripts, reducing system deployment cycles by 40%.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> Python, C/C++, C# .NET, SQL, JavaScript, PowerShell, Bash, REST APIs, MCP Servers, GPU Acceleration, ROCm, DirectML, ONNX, LLM, Multimodal, LMStudio, AnythingLLM, Procyon, Windows AI, Linux, WSL, Docker, Hyper-V, Azure Event Hub, Snowflake, PostgreSQL, PowerBI
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Dell Technologies &mdash; Round Rock, TX</span>
+                <span class="date">Nov 2021 &ndash; Jul 2024</span>
+            </div>
+            <div class="title-line">Principal Software Engineer</div>
+            <ul>
+                <li>Provided technical leadership for 16-engineer team developing embedded systems and BIOS/firmware security validation suites.</li>
+                <li>Directed full product lifecycle from architecture through release; served as SME for UEFI, embedded security, and firmware hardening.</li>
+                <li>Designed threat modeling PoC leveraging NLP, custom scrapers, and generative AI to automate vulnerability response and PowerBI reporting.</li>
+                <li>Integrated security compliance into CI/CD pipelines including SBOM generation and U.S. government regulatory adherence.</li>
+                <li>Mentored engineers in BIOS security practices; delivered training on penetration testing, attack surface analysis, and secure development.</li>
+            </ul>
+
+            <div class="title-line" style="margin-top: 15px;">Senior Software Engineer | Jul 2019 &ndash; Nov 2021</div>
+            <ul>
+                <li>Architected PC lab automation platform managing BIOS/firmware updates, imaging, and configuration for 1000+ physical systems across global labs.</li>
+                <li>Developed Python automation framework with Flask REST APIs hosted on Microsoft IIS; integrated with Dell enterprise validation infrastructure.</li>
+                <li>Extended solution to support QFE updates using OO design principles, accelerating patch deployment company-wide.</li>
+                <li>Built cryptographic signing tools automating BIOS digital signature compliance.</li>
+                <li>Mastered regex (Python <code>re</code>) for complex data extraction and validation in firmware update pipelines.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> C++, Python, .NET, PowerShell, PyTest, unittest, Flask, Lean Agile, Git, IIS, Windows PE, DISM, CCTK, UEFI, MongoDB, MySQL
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">NF Computer Services &mdash; Austin, TX</span>
+                <span class="date">2016 &ndash; Present</span>
+            </div>
+            <div class="title-line">Principal Software Engineer (Consultant)</div>
+            <ul>
+                <li>GLG Professional Council Member advising Fortune 500 clients on IoT architecture, device connectivity, and data analytics strategy.</li>
+                <li>Developed AI-driven NLP solutions: sentiment analysis, text summarization, machine translation, and LangChain-based conversational agents.</li>
+                <li>Designed non-intrusive monitoring PoCs for Alzheimer's/dementia home care using sensor fusion and edge AI.</li>
+                <li>Implemented RAG architectures with Hugging Face, Sentence-Transformers, and local LLMs (LM Studio) for healthcare accessibility applications.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> C++, Python, .NET, JavaScript, LangChain, AWS (SQS, IoT Hub, Lambda, EC2, S3), Hugging Face, 802.15.4 (Zigbee, XBee), RAG
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Honeywell &mdash; Austin, TX (Remote)</span>
+                <span class="date">2016 &ndash; 2019</span>
+            </div>
+            <div class="title-line">Data Architect</div>
+            <ul>
+                <li>Provided L3 engineering support for Sentience IoT platform: root cause analysis, performance tuning, and CLR/Orleans runtime debugging.</li>
+                <li>Built Splunk/AppDynamics dashboards with regex-driven analytics for intrusion detection and system health monitoring.</li>
+                <li>Enabled ML engineers with data extraction from Azure analytics streams; trained teams on SQL for executive reporting.</li>
+                <li>Participated in post-mortems with executives to implement corrective actions for platform-scale incidents.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> C#, .NET, PowerShell, SQL Server, Oracle, Splunk Enterprise, AppDynamics, Azure (Functions, IoT Hub, Data Lakes, Blob/Table Storage, AAD, VM)
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">WellAware &mdash; San Antonio, TX</span>
+                <span class="date">2014 &ndash; 2015</span>
+            </div>
+            <div class="title-line">Software and Network Engineer</div>
+            <ul>
+                <li>Developed Python microservices using AMQP to process oilfield telemetry from RPMA/cellular radios into cloud analytics pipelines.</li>
+                <li>Built satellite/cellular data infrastructure for remote field sites; designed sensor reliability PoCs improving MTBF for rugged deployments.</li>
+                <li>Created parsing library for heterogeneous radio streams (RPMA, Cellular) enabling cloud-based data science workflows.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> Python, AMQP, Geo-Stationary Satellite, Cellular, ZigBee, RPMA, Git, PowerShell, Bash
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Digi International &mdash; Austin, TX</span>
+                <span class="date">2009 &ndash; 2014</span>
+            </div>
+            <div class="title-line">Device Cloud Systems Engineer</div>
+            <ul>
+                <li>Engineered C++/C# firmware for XBee/Zigbee modules on Atmel/Silicon Labs chipsets; designed sensor hardware for smart energy/cities.</li>
+                <li>Developed embedded Python Modbus Master for PLC communication at dam sites via cloud-connected Digi devices.</li>
+                <li>Built Python multithreaded fleet management solution tracking GPS/engine status across European cellular networks.</li>
+                <li>Created cellular provisioning tool with SMS callback; delivered onsite Python training for industrial IoT teams (Covidien).</li>
+            </ul>
+
+            <div class="title-line" style="margin-top: 15px;">Sr. Application Engineer | 2002 &ndash; 2009</div>
+            <ul>
+                <li>Developed firmware/drivers for Watchport USB sensors using PIC/ATmega (C/Assembly); built WDM drivers with Bulk/Interrupt USB modes.</li>
+                <li>Engineered C++/MFC applications with DirectShow filters for USB video processing; created motion detection DLL and HIPAA-compliant kiosk AutoLogout system.</li>
+                <li>Performed kernel debugging with SoftICE/WinDbg; developed JavaPOS drivers for proximity sensor POS integration.</li>
+            </ul>
+            <div class="tech-stack">
+                <strong>Technical Stack:</strong> C, C++, C#, .NET, Python, Assembly, ZigBee, Modbus, PLC, ARM, AVR, Atmel, Freescale, i.MX51, ConnectCore, WinCE, WDM, WinDbg, SoftICE, USB, RS232/422/485
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education & Recognition</h2>
+        
+        <div class="edu-section">
+            <div class="item-title">Education</div>
+            BS in Computer Science (30 credits remaining)<br>
+            The University of Texas at Austin
+        </div>
+
+        <div class="cert-section" style="margin-top: 15px;">
+            <div class="item-title">Certifications</div>
+            <ul>
+                <li>Microsoft Certified Systems Engineer (MCSE)</li>
+                <li>Microsoft Certified Professional + Internet (MCP+I)</li>
+                <li>GLG Professional Council Member</li>
+            </ul>
+        </div>
+
+        <div class="award-section">
+            <div class="item-title">Awards</div>
+            <ul>
+                <li><strong>Dell Technologies Inspire Award (Jan 2024)</strong> &ndash; Critical project leadership during resource gap</li>
+                <li><strong>Dell Technologies Inspire Award (Sep 2023)</strong> &ndash; Penetration testing deadline execution</li>
+                <li><strong>Dell Technologies Inspire Award (Apr 2022)</strong> &ndash; Threat modeling process innovation</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html>
