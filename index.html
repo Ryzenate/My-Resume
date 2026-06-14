@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: system-ui; margin: 0; background: #f7f7f9; line-height: 1.6; }
-    header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; }
+    /* Flexbox layout to align title on the left and QR on the right */
+    header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
     h1 { margin: 0; color: #004b8d; }
     h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; }
     section { background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 2rem; }
@@ -27,6 +28,20 @@
       font-weight: 500;
     }
     .navbar a:hover { text-decoration: underline; }
+    
+    /* Small, professional container for the top right QR placement */
+    .header-qr-container {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #555;
+      line-height: 1.2;
+    }
+    .header-qr-container img {
+      width: 75px;
+      height: 75px;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
   </style>
 </head>
 
@@ -44,6 +59,10 @@
 
 <header>
   <h1>Welcome</h1>
+  <div class="header-qr-container">
+    <img src="pages/media/nathan_contact_qr.png" alt="QR Code" />
+    <div>Scan to Email Me</div>
+  </div>
 </header>
 
 <main>
@@ -59,13 +78,14 @@
     
     <h2>Technical Highlights</h2>
     <ul>
-      <li><strong>System Debugging & Root-Cause Analysis:</strong> 20 years of battle-tested diagnostic mastery across the entire technology stack. Expert in tracing failures from low-level assembly, kernel bugs (SoftICE/WinDbg), and USB/WDM hardware drivers up to complex, platform-scale big data architectures—including debugging CLR/Orleans runtimes and Azure telemetry streams for Honeywell’s enterprise IoT platform.</li>
+      <li><strong>System Debugging & Root-Cause Analysis:</strong> 20 years of battle-tested diagnostic mastery across the entire technology stack. Expert in tracing failures from low-level assembly, kernel bugs (SoftICE/WinDbg), and USB/WDM hardware drivers up to complex, platform-scale big data architectures-including debugging CLR/Orleans runtimes and Azure telemetry streams for Honeywell's enterprise IoT platform.</li>
       <li><strong>Generative AI Architecture:</strong> Designed RAG systems, agentic workflows, and MCP integrations for enterprise troubleshooting and security analytics; implemented multimodal LLM pipelines (ONNX, ROCm, DirectML) on AMD GPU/NPU hardware.</li>
       <li><strong>Embedded-to-Cloud Integration:</strong> Architected BIOS/firmware automation for 1000+ PC labs; developed Modbus/PLC gateways, Zigbee/XBee sensor networks, and AMQP microservices for oilfield telemetry.</li>
       <li><strong>Cross-Platform Systems:</strong> Unified Windows/Linux validation environments using WSL2, Docker, and Hyper-V; built offline Windows image servicing pipelines reducing deployment time 40%.</li>
       <li><strong>Security Engineering:</strong> Led BIOS/firmware security validation for 16-engineer team; implemented threat modeling automation with NLP and generative AI for vulnerability response and SBOM management.</li>
     </ul>
   </section>
+
 </main>
 
 <nav class="navbar">
