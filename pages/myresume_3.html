@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume - Principal Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: #f7f7f9; line-height: 1.6; color: #334155; }
+    header { padding: 2rem; background: white; border-bottom: 1px solid #ddd; }
+    h1 { margin: 0; color: #004b8d; }
+    h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1rem; }
+    h3 { color: #1e293b; margin: 0 0 0.25rem 0; font-size: 1.2rem; }
+    section { background: white; padding: 1.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 2rem; }
+    main { padding: 2rem; max-width: 900px; margin: auto; }
+    
+    .navbar {
+      background: #004b8d;
+      top: 0;
+      position: sticky;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .navbar a:hover { text-decoration: underline; }
+    
+    .footer-nav {
+      position: static;
+      margin-top: 4rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+    .contact-info a { color: #004b8d; text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
+
+    .job-meta {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 0.25rem;
+    }
+    .role-title { font-style: italic; font-weight: 500; color: #334155; margin-bottom: 0.75rem; }
+    
+    ul { padding-left: 1.25rem; margin: 0.5rem 0 1rem 0; }
+    li { margin-bottom: 0.5rem; }
+    
+    .tech-stack {
+      background-color: #f8fafc;
+      border-left: 4px solid #004b8d;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .tech-stack strong { color: #004b8d; }
+    /* --- Export Button & Menu Styles --- */
+    .export-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .export-btn {
+      background: #004b8d;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .export-btn:hover { background: #003564; }
+    .export-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 100;
+      min-width: 160px;
+      margin-top: 5px;
+    }
+    .export-menu button {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: #334155;
+    }
+    .export-menu button:hover { background: #f1f5f9; color: #004b8d; }
+    .export-container:hover .export-menu,
+    .export-menu:hover { display: block; }
+
+    /* --- Crucial Print Styles for Perfect PDF Export --- */
+    @media print {
+      body { background: white; color: black; padding: 0; margin: 0; font-size: 11pt; }
+      .navbar, .export-container, footer, .footer-nav { display: none !important; }
+      main { padding: 0; max-width: 100%; }
+      section { border: none; padding: 0; margin-bottom: 1.5rem; page-break-inside: avoid; }
+      h2 { border-bottom: 2px solid #004b8d; color: #004b8d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .tech-stack { background: #f8fafc !important; border-left: 4px solid #004b8d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="impact.html">Impact</a>
+  <a href="inventions.html">Inventions</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="myresume.html">Resume</a>
+</nav>
+
+<header>
+  <h1>Nathan Fritsche</h1>
+  <div class="contact-info">
+    <span>Austin, Texas</span>
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/nwfritsche" target="_blank">linkedin.com/in/nwfritsche</a>
+    <span>|</span>
+    <a href="mailto:nathanf@live.com">nathanf@live.com</a>
+  </div>
+</header>
+
+<main>
+  <div class="export-container">
+    <button class="export-btn">
+      💾 Save / Export Resume &#9662;
+    </button>
+    <div class="export-menu">
+      <button onclick="exportPDF()">PDF Document (.pdf)</button>
+      <button onclick="exportWord()">Word / Google Doc (.doc)</button>
+      <button onclick="exportMarkdown()">Markdown (.md)</button>
+      <button onclick="exportTXT()">Plain Text (.txt)</button>
+    </div>
+  </div>
+  
+  <section>
+    <h2>Principal Software Engineer</h2>
+    <p>
+      Engineering leader spanning chip-to-cloud architecture: embedded firmware &rarr; industrial IoT &rarr; cloud platforms &rarr; generative AI systems. 15+ years delivering automation, security validation, and AI-driven transformation across hardware validation labs, enterprise firmware ecosystems, and distributed sensor networks.
+    </p>
+  </section>
+
+  <section>
+    <h2>Technical Highlights</h2>
+    <ul>
+      <li><strong>System Debugging & Root-Cause Analysis:</strong> 20 years of battle-tested diagnostic mastery across the entire technology stack. Expert in tracing failures from low-level assembly, kernel bugs (SoftICE/WinDbg), and USB/WDM hardware drivers up to complex, platform-scale big data architectures-including debugging CLR/Orleans runtimes and Azure telemetry streams for Honeywell's enterprise IoT platform.</li>
+      <li><strong>Generative AI Architecture:</strong> Designed RAG systems, agentic workflows, and MCP integrations for enterprise troubleshooting and security analytics; implemented multimodal LLM pipelines (ONNX, ROCm, DirectML) on AMD GPU/NPU hardware.</li>
+      <li><strong>Embedded-to-Cloud Integration:</strong> Architected BIOS/firmware automation for 1000+ PC labs; developed Modbus/PLC gateways, Zigbee/XBee sensor networks, and AMQP microservices for oilfield telemetry.</li>
+      <li><strong>Cross-Platform Systems:</strong> Unified Windows/Linux validation environments using WSL2, Docker, and Hyper-V; built offline Windows image servicing pipelines reducing deployment time 40%.</li>
+      <li><strong>Security Engineering:</strong> Led BIOS/firmware security validation for 16-engineer team; implemented threat modeling automation with NLP and generative AI for vulnerability response and SBOM management.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <!-- AMD -->
+    <div style="margin-bottom: 2rem;">
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">AMD &mdash; Austin, TX (Contractor)</span>
+        <span>Nov 2024 &ndash; Present</span>
+      </div>
+      <div class="role-title">AI Validation & Automation Engineer</div>
+      <ul>
+        <li>Spearheaded AI hardware validation across Windows/Linux using ROCm, DirectML, and ONNX for multimodal/LLM benchmarking on AMD GPU/NPU platforms.</li>
+        <li>Architected RAG proof-of-concept to triage complex engineering issues, accelerating diagnostic workflows for technical staff.</li>
+        <li>Engineered REST API clients and automation tools in Python/C#/.NET using OOP principles to eliminate manual data collection and reporting.</li>
+        <li>Automated AI benchmarking on Systems Under Test via Apex Automation; identified RAG opportunities across 5+ engineering business units.</li>
+        <li>Developed Node.js/PowerShell "Compliance Homepage" centralizing lab standards enforcement and operational workflows.</li>
+        <li>Created offline Windows image servicing process with PowerShell scripts, reducing system deployment cycles by 40%.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> Python, C/C++, C# .NET, SQL, JavaScript, Power BI, PowerShell, Bash, REST APIs, MCP Servers, GPU Acceleration, ROCm, DirectML, ONNX, LLM, Multimodal, LMStudio, AnythingLLM, Procyon, Windows AI, Linux, WSL, Docker, Hyper-V, Azure Event Hub, Snowflake, PostgreSQL, PowerBI
+      </div>
+    </div>
+
+    <!-- DELL -->
+    <div style="margin-bottom: 2rem;">
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">Dell Technologies &mdash; Round Rock, TX</span>
+        <span>Nov 2021 &ndash; Jul 2024</span>
+      </div>
+      <div class="role-title">Principal Software Engineer & Security Maturity Lead</div>
+      <p style="margin: 0.25rem 0 0.5rem 0; font-size: 0.95rem; line-height: 1.5;">
+        Provided technical leadership and strategic governance to a team of 16 engineers spanning embedded systems and software tool development, ensuring strict compliance with enterprise security standards and product security baselines. Additionally, directed a team of offensive and defensive security testing engineers to develop, automate, and execute comprehensive BIOS, UEFI, and firmware security validation test suites, hardware-level vulnerability assessments, and robust verification processes.
+      </p>
+      <ul>
+        <li><strong>Secure Product Lifecycle Governance:</strong> Provided strategic and tactical cybersecurity guidance across the entire product lifecycle—integrating security-by-design principles from initial architectural threat modeling through secure release management and continuous security testing.</li>
+        <li><strong>Hands-on Security Architecture:</strong> Led by example through active, hands-on participation in critical cryptographic design, secure hardware architecture, and complex vulnerability remediation sessions.</li>
+        <li><strong>Security Culture & Capability Building:</strong> Delivered comprehensive technical training and mentorship on secure coding practices, hardware-root-of-trust concepts, and low-level vulnerability identification to upskill and empower the embedded systems and BIOS engineering teams.</li>
+        <li><strong>Embedded & Firmware SME:</strong> Acted as the ultimate technical authority and Subject Matter Expert (SME) for complex embedded systems, BIOS, and hardware security challenges. Conducted end-to-end security assessments, including rigorous risk analysis, architectural threat modeling, penetration testing, coordinated vulnerability disclosure/response, and attack surface hardening.</li>
+        <li><strong>Security Process Optimization:</strong> Identified operational gaps and inefficiencies within the security lifecycle; engineered streamlined, secure workflows and comprehensive compliance documentation. Created high-impact executive presentations to secure stakeholder buy-in and successfully scale new security processes organization-wide.</li>
+        <li><strong>Cross-Functional Security Alignment:</strong> Led cross-functional engineering, product, and IT teams in adopting modernized security processes, providing the necessary training, DevSecOps guardrails, and ongoing support to ensure seamless organizational adoption.</li>
+        <li><strong>AI-Driven Security Innovation:</strong> Conceptualized, developed, and deployed an advanced proof-of-concept (PoC) solution for automated threat modeling and rapid vulnerability response. Leveraged a sophisticated stack combining automation, NLP, custom data scraping frameworks, and generative AI to significantly harden the product security posture, enable proactive risk management, and generate automated compliance reporting via Power BI dashboards.</li>
+        <li><strong>Regulatory Compliance & Supply Chain Security:</strong> Ensured strict compliance with U.S. Government regulations and federal cybersecurity mandates (e.g., NIST SP 800-161, Executive Orders on Cybersecurity) by deeply integrating security best practices into the Secure Software Development Lifecycle (SSDL), implementing automated CI/CD pipeline security gates, and institutionalizing Software Bill of Materials (SBOM) management.</li>
+      </ul>
+
+      <div class="job-meta" style="margin-top: 1rem;">
+        <span style="font-style: italic; font-weight: 500; color: #334155;">Senior Software Engineer</span>
+        <span>Jul 2019 &ndash; Nov 2021</span>
+      </div>
+      <ul>
+        <li>Architected PC lab automation platform managing BIOS/firmware updates, imaging, and configuration for 1000+ physical systems across global labs.</li>
+        <li>Developed Python automation framework with Flask REST APIs hosted on Microsoft IIS; integrated with Dell enterprise validation infrastructure.</li>
+        <li>Extended solution to support QFE updates using OO design principles, accelerating patch deployment company-wide.</li>
+        <li>Built cryptographic signing tools automating BIOS digital signature compliance.</li>
+        <li>Mastered regex (Python <code>re</code>) for complex data extraction and validation in firmware update pipelines.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> C++, Python, .NET, Power BI, PowerShell, PyTest, unittest, Flask, Lean Agile, Git, IIS, Windows PE, DISM, CCTK, UEFI, MongoDB, MySQL, NLP, Power BI, DevSecOps, SSDL, SBOM
+      </div>
+    </div>
+
+    <!-- NF Computer Services -->
+    <div style="margin-bottom: 2rem;">
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">NF Computer Services &mdash; Austin, TX</span>
+        <span>2016 &mdash; Present</span>
+      </div>
+      <div class="role-title">Principal Software Engineer (Consultant)</div>
+      <ul>
+        <li>GLG Professional Council Member advising Fortune 500 clients on IoT architecture, device connectivity, and data analytics strategy.</li>
+        <li>Developed AI-driven NLP solutions: sentiment analysis, text summarization, machine translation, and LangChain-based conversational agents.</li>
+        <li>Designed non-intrusive monitoring PoCs for Alzheimer's/dementia home care using sensor fusion and edge AI.</li>
+        <li>Implemented RAG architectures with Hugging Face, Sentence-Transformers, and local LLMs (LM Studio) for healthcare accessibility applications.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> C++, Python, .NET, JavaScript, LangChain, AWS (SQS, IoT Hub, Lambda, EC2, S3), Hugging Face, 802.15.4 (Zigbee, XBee), RAG
+      </div>
+    </div>
+
+    <!-- Honeywell -->
+    <div style="margin-bottom: 2rem;">
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">Honeywell &mdash; Austin, TX (Remote)</span>
+        <span>2016 &ndash; 2019</span>
+      </div>
+      <div class="role-title">Data Architect</div>
+      <ul>
+        <li>Provided L3 engineering support for Sentience IoT platform: root cause analysis, performance tuning, and CLR/Orleans runtime debugging.</li>
+        <li>Built Splunk/AppDynamics dashboards with regex-driven analytics for intrusion detection and system health monitoring.</li>
+        <li>Enabled ML engineers with data extraction from Azure analytics streams; trained teams on SQL for executive reporting.</li>
+        <li>Participated in post-mortems with executives to implement corrective actions for platform-scale incidents.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> C#, .NET, PowerShell, SQL Server, Oracle, Splunk Enterprise, AppDynamics, Azure (Functions, IoT Hub, Data Lakes, Blob/Table Storage, AAD, VM)
+      </div>
+    </div>
+
+    <!-- WellAware -->
+    <div style="margin-bottom: 2rem;">
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">WellAware &mdash; San Antonio, TX</span>
+        <span>2014 &ndash; 2015</span>
+      </div>
+      <div class="role-title">Software and Network Engineer</div>
+      <ul>
+        <li>Developed Python microservices using AMQP to process oilfield telemetry from RPMA/cellular radios into cloud analytics pipelines.</li>
+        <li>Built satellite/cellular data infrastructure for remote field sites; designed sensor reliability PoCs improving MTBF for rugged deployments.</li>
+        <li>Created parsing library for heterogeneous radio streams (RPMA, Cellular) enabling cloud-based data science workflows.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> Python, AMQP, Geo-Stationary Satellite, Cellular, ZigBee, RPMA, Git, PowerShell, Bash
+      </div>
+    </div>
+
+    <!-- Digi International -->
+    <div>
+      <div class="job-meta">
+        <span style="color: #1e293b; font-size: 1.1rem;">Digi International &mdash; Austin, TX</span>
+        <span>2009 &ndash; 2014</span>
+      </div>
+      <div class="role-title">Device Cloud Systems Engineer</div>
+      <ul>
+        <li>Engineered C++/C# firmware for XBee/Zigbee modules on Atmel/Silicon Labs chipsets; designed sensor hardware for smart energy/cities.</li>
+        <li>Developed embedded Python Modbus Master for PLC communication at dam sites via cloud-connected Digi devices.</li>
+        <li>Built Python multithreaded fleet management solution tracking GPS/engine status across European cellular networks.</li>
+        <li>Created cellular provisioning tool with SMS callback; delivered onsite Python training for industrial IoT teams (Covidien).</li>
+      </ul>
+
+      <div class="job-meta" style="margin-top: 1rem;">
+        <span style="font-style: italic; font-weight: 500; color: #334155;">Senior Application Engineer</span>
+        <span>2002 &ndash; 2009</span>
+      </div>
+      <ul>
+        <li>Developed firmware/drivers for Watchport USB sensors using PIC/ATmega (C/Assembly); built WDM drivers with Bulk/Interrupt USB modes.</li>
+        <li>Engineered C++/MFC applications with DirectShow filters for USB video processing; created motion detection DLL and HIPAA-compliant kiosk AutoLogout system.</li>
+        <li>Performed kernel debugging with SoftICE/WinDbg; developed JavaPOS drivers for proximity sensor POS integration.</li>
+      </ul>
+      <div class="tech-stack">
+        <strong>Technical Stack:</strong> C, C++, C#, .NET, Python, Assembly, ZigBee, Modbus, PLC, ARM, AVR, Atmel, Freescale, i.MX51, ConnectCore, WinCE, WDM, WinDbg, SoftICE, USB, RS232/422/485
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education & Recognition</h2>
+    <p><strong>Education</strong><br>
+    BS in Computer Science (30 credits remaining)<br>
+    The University of Texas at Austin</p>
+
+    <p style="margin-top: 1.5rem;"><strong>Certifications</strong></p>
+    <ul>
+      <li>Microsoft Certified Systems Engineer (MCSE)</li>
+      <li>Microsoft Certified Professional + Internet (MCP+I)</li>
+      <li>GLG Professional Council Member</li>
+    </ul>
+
+    <p style="margin-top: 1.5rem;"><strong>Awards</strong></p>
+    <ul>
+      <li>Dell Technologies Inspire Award (Jan 2024) &ndash; Critical project leadership during resource gap</li>
+      <li>Dell Technologies Inspire Award (Sep 2023) &ndash; Penetration testing deadline execution</li>
+      <li>Dell Technologies Inspire Award (Apr 2022) &ndash; Threat modeling process innovation</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+function exportPDF() {
+  window.print();
+}
+
+function exportMarkdown() {
+  const mdContent = `# Nathan Fritsche
+Austin, Texas | nathanf@live.com | https://www.linkedin.com/in/nwfritsche
+
+## Principal Software Engineer
+Engineering leader spanning chip-to-cloud architecture: embedded firmware -> industrial IoT -> cloud platforms -> generative AI systems. 15+ years delivering automation, security validation, and AI-driven transformation.
+
+## Technical Highlights
+* **System Debugging:** 20 years of diagnostic mastery from low-level assembly, drivers (SoftICE/WinDbg), up to complex big data frameworks (Honeywell Azure/CLR runtimes).
+* **Generative AI Architecture:** Designed RAG systems, agentic workflows, and MCP integrations on AMD GPU/NPU hardware.
+* **Embedded-to-Cloud Integration:** Lab automation for 1000+ PC nodes, Modbus/PLC gateways, and AMQP microservices.
+
+## Professional Experience
+### AMD (Contractor) | AI Lab Validation Engineer | Nov 2024 - Present
+* Spearheaded AI hardware validation using ROCm, DirectML, and ONNX for LLM benchmarking.
+* Architected RAG proof-of-concept to triage complex engineering issues.
+
+### Dell Technologies | Principal Software Engineer & Security Maturity Lead | Nov 2021 - Jul 2024
+* Provided technical leadership and strategic governance to a team of 16 engineers spanning embedded systems and software tool development.
+* Directed an offensive/defensive security testing team to automate comprehensive BIOS, UEFI, and firmware validation test suites.
+* AI-Driven Security Innovation: Developed threat modeling PoC leveraging NLP and generative AI for vulnerability response and automated Power BI reporting.
+
+## Education
+* BS in Computer Science (30 credits remaining) - The University of Texas at Austin`;
+
+  downloadFile(mdContent, 'Nathan_Fritsche_Resume.md', 'text/markdown');
+}
+
+function exportTXT() {
+  const txtContent = `NATHAN FRITSCHE\nAustin, Texas | nathanf@live.com\n\nPRINCIPAL SOFTWARE ENGINEER\n============================\n20+ Years Systems Engineering, Debugging, and Architecting Chip-to-Cloud Networks.\n\nFull resume viewable online at portfolio location.`;
+  downloadFile(txtContent, 'Nathan_Fritsche_Resume.txt', 'text/plain');
+}
+
+function exportWord() {
+  const mainContent = document.querySelector('main').innerHTML;
+  const htmlDoc = `
+    <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Nathan Fritsche - Resume</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; color: #334155; }
+        h1 { color: #004b8d; }
+        h2 { color: #004b8d; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        ul { margin-top: 5px; margin-bottom: 10px; }
+        li { margin-bottom: 4px; }
+        .tech-stack { background-color: #f8fafc; padding: 8px; border-left: 4px solid #004b8d; margin-top: 5px; }
+        .export-container { display: none !important; }
+      </style>
+    </head>
+    <body>
+      ${mainContent}
+    </body>
+    </html>`;
+
+  const utf8BOM = "\ufeff";
+  const finalContent = utf8BOM + htmlDoc;
+  downloadFile(finalContent, 'Nathan_Fritsche_Resume.doc', 'application/msword;charset=utf-8');
+}
+
+function downloadFile(content, fileName, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
+
+<nav class="navbar footer-nav">
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="skills.html">Skills</a>
+  <a href="impact.html">Impact</a>
+  <a href="inventions.html">Inventions</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="myresume.html">Resume</a>
+</nav>
+
+</body>
+</html>
