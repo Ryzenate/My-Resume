@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio & Systems Architecture Resume</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --tag-bg: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--panel-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Header Architecture */
+        header {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.05em;
+        }
+
+        header h2 {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .meta-info span a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .meta-info span a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            background: #111827;
+            border-bottom: 1px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 1rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            background: var(--panel-bg);
+        }
+
+        /* Content Panes */
+        .tab-content {
+            padding: 2.5rem;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typographic Utilities */
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        .role-summary {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Technical Stack Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-card {
+            background: #111827;
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-card h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: var(--text-main);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .job-entry {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .job-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .job-company {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: #111827;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .job-details {
+            list-style-type: square;
+            margin-left: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .job-details li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Project UI Layout */
+        .project-card {
+            background: #111827;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card h4 {
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            body { padding: 0.5rem; }
+            .tab-content { padding: 1.5rem; }
+            header { padding: 1.5rem; }
+            .job-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 id="prof-name">Systems Architect & Principal Engineer</h1>
+        <h2>Chip-to-Cloud Systems | Industrial Communications Expert</h2>
+        <div class="meta-info">
+            <span>📍 Austin, TX Metro Area</span>
+            <span>🌐 <a href="https://micronate.com" target="_blank">micronate.com</a></span>
+            <span>🛠️ Expert Stack: Python, C/C++, C# .NET, GenAI Frameworks</span>
+        </div>
+    </header>
+
+    <nav class="tabs-nav" role="tablist">
+        <button class="tab-btn active" onclick="switchTab(event, 'summary')">Profile Summary</button>
+        <button class="tab-btn" onclick="switchTab(event, 'skills')">Technical Matrix</button>
+        <button class="tab-btn" onclick="switchTab(event, 'experience')">Professional History</button>
+        <button class="tab-btn" onclick="switchTab(event, 'projects')">Core Projects</button>
+    </nav>
+
+    <div class="tab-content">
+        
+        <div id="summary" class="tab-pane active">
+            <h3>Executive Profile</h3>
+            <p>Highly accomplished Systems Architect and Principal Software Engineer with over 20 years of verifiable expertise designing, breaking down, and engineering secure solutions from "chip to cloud". Recognized expert in industrial communications protocols, robust backend ecosystems, hardware validation, and edge automation infrastructure.</p>
+            <p>Proven track record driving massive security maturity programs within global enterprise labs, designing internal development ecosystems, and leading cross-functional engineering efforts. Currently specializing in advanced automated hardware validation framework design and the integration of enterprise LLM infrastructures (RAG architectures, agentic systems, and Model Context Protocol integrations).</p>
+        </div>
+
+        <div id="skills" class="tab-pane">
+            <h3>Core Capabilities & Technology Stack</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Programming Ecosystems</h4>
+                    <div class="tag-container">
+                        <span class="tag">Python (15+ Yrs)</span>
+                        <span class="tag">C / C++</span>
+                        <span class="tag">C# .NET</span>
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">Node.js / JavaScript</span>
+                        <span class="tag">Regular Expressions (re)</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Lab Architecture & Bare-Metal</h4>
+                    <div class="tag-container">
+                        <span class="tag">UEFI / BIOS / Firmware</span>
+                        <span class="tag">CCTK</span>
+                        <span class="tag">Windows PE</span>
+                        <span class="tag">Windows Deployment Server</span>
+                        <span class="tag">DISM / bcdedit / diskpart</span>
+                        <span class="tag">Chip-to-Cloud Design</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>AI Validation & Frameworks</h4>
+                    <div class="tag-container">
+                        <span class="tag">ROCm Validation</span>
+                        <span class="tag">Retrieval-Augmented Gen (RAG)</span>
+                        <span class="tag">Agentic Workflows</span>
+                        <span class="tag">Model Context Protocol (MCP)</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h4>Data, Tooling & Methodology</h4>
+                    <div class="tag-container">
+                        <span class="tag">Lean Agile / Scrum / Kanban</span>
+                        <span class="tag">PyTest / Unittest</span>
+                        <span class="tag">Microsoft IIS</span>
+                        <span class="tag">MongoDB / MySQL</span>
+                        <span class="tag">Git / Bitbucket</span>
+                        <span class="tag">Jira / Confluence APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="experience" class="tab-pane">
+            <h3>Employment History</h3>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">AI Lab Validation & Automation Engineer</span> - 
+                        <span class="job-company">AMD</span>
+                    </div>
+                    <span class="job-date">Nov 2024 — Present</span>
+                </div>
+                <ul class="job-details">
+                    <li>Drive advanced AI hardware benchmarking and validation infrastructures across deep enterprise environments.</li>
+                    <li>Engineer low-level validation suites using Python and the ROCm ecosystem to optimize and confirm Silicon behavior.</li>
+                    <li>Implement next-generation AI pipelines leveraging RAG, state-machine agent workflows, and data exchange tools.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Principal Software Engineer</span> - 
+                        <span class="job-company">Dell Technologies (Round Rock, TX)</span>
+                    </div>
+                    <span class="job-date">Nov 2021 — 2024</span>
+                </div>
+                <ul class="job-details">
+                    <li>Led comprehensive security maturity and data isolation programs throughout global hardware and PC testing laboratories.</li>
+                    <li>Developed automated pythonic frameworks to execute BIOS/Firmware validations, reducing cycles by hundreds of man-hours.</li>
+                    <li>Architected deep API integrations linking automation frameworks securely with internal Jira and Confluence configurations.</li>
+                    <li>Pioneered initial threat modeling workflows introducing automated analytics mechanisms.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Sr. Software Engineer</span> - 
+                        <span class="job-company">Dell Technologies (Round Rock, TX)</span>
+                    </div>
+                    <span class="job-date">July 2019 — November 2021</span>
+                </div>
+                <p class="role-summary">Responsible for creating a solution to automate BIOS and firmware updates on multiple PCs in lab environments consisting of over 1000 physical computers and included installation scripts to install in multiple countries. Attended daily Scrum meetings and practiced Lean Agile software development through active participation in code reviews and sprint meetings.</p>
+                <ul class="job-details">
+                    <li>Architected and implemented a comprehensive PC lab automation platform, encompassing BIOS and firmware updates, system imaging, and configuration management.</li>
+                    <li>Designed and developed robust Python-based automation frameworks, leveraging web services to provide REST APIs for facilitating update automation. Solution included standing up a Microsoft Internet Information Server to provide web service hosting in a production environment.</li>
+                    <li>Performed routine cross-team collaboration with Dell BIOS Validation team to seamlessly integrate Python automation solutions into existing enterprise framework.</li>
+                    <li>Approached by OS team to expand solution and integrate QFE update capabilities. Using original solution’s OO design, quickly added support for automated QFE detection, updating, and verification, expanding its use and value to the company.</li>
+                    <li>Provided technical documentation and diagrams for Confluence site content including persuasive presentations to Dell upper-level management.</li>
+                    <li>Mastery of regular expressions for data extraction, validation, and complex pattern matching using Python's re library.</li>
+                </ul>
+                <div class="tag-container" style="padding-left: 0.5rem;">
+                    <span class="tag">C++</span> <span class="tag">Python</span> <span class="tag">.NET</span> <span class="tag">PowerShell</span> <span class="tag">PyTest</span> <span class="tag">Regular Expressions (re)</span> <span class="tag">Unittest</span> <span class="tag">Flask</span> <span class="tag">Lean Agile</span> <span class="tag">Kanban</span> <span class="tag">Scrum</span> <span class="tag">Git</span> <span class="tag">Microsoft IIS</span> <span class="tag">Windows PE</span> <span class="tag">Windows Deployment Server</span> <span class="tag">Bitbucket</span> <span class="tag">Confluence</span> <span class="tag">Jira</span> <span class="tag">CCTK</span> <span class="tag">bcdedit</span> <span class="tag">diskpart</span> <span class="tag">DISM</span> <span class="tag">MongoDB</span> <span class="tag">MySQL</span> <span class="tag">UEFI</span>
+                </div>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Principal Software Architect / Consultant</span> - 
+                        <span class="job-company">NF Computer Services</span>
+                    </div>
+                    <span class="job-date">2016 — Present</span>
+                </div>
+                <ul class="job-details">
+                    <li>Provide high-level consulting for secure embedded systems and industrial field communications architectures.</li>
+                    <li>Deliver end-to-end telemetry mappings, fieldbus integrations, and cloud ingestion pathways across varied industries.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Prior Engineering Leadership Roles</span> - 
+                        <span class="job-company">Honeywell, WellAware, Digi International</span>
+                    </div>
+                    <span class="job-date">Pre-2016</span>
+                </div>
+                <p style="margin-top: 0.5rem; margin-left: 0.25rem;">Served as Data Architect and Core Systems Engineer developing industrial protocols, IoT gateway telemetry layers, M2M products, and highly performant database storage modules.</p>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-pane">
+            <h3>Key Technical Implementations</h3>
+            
+            <div class="project-card">
+                <h4>DrDvdAuto: Drivers Distribution Framework</h4>
+                <p>Architected and coded a state-machine driven automation framework explicitly optimized for reliable Windows driver provisioning, isolation testing, and production lab configuration pipelines.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Laboratory Compliance Homepage Architecture</h4>
+                <p>Conceived and executed a centralized enterprise application built utilizing Node.js backends and PowerShell management vectors to standardize, track, and enforce high-level regulatory lab operations workflows.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>Enterprise GenAI Solutions Integration</h4>
+                <p>Designed and deployed specialized agent workflows integrating advanced Model Context Protocol (MCP) ecosystems, linking runtime LLM environments directly with deep local system layers safely.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function switchTab(event, tabId) {
+        // Hide all panes
+        const panes = document.querySelectorAll('.tab-pane');
+        panes.forEach(pane => pane.classList.remove('active'));
+
+        // Deactivate all buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Show targets
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+</body>
+</html>

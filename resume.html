@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems Architect & Principal Engineer - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --card-hover: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .landing-container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 span {
+            color: var(--accent-color);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Focus Area Grid */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .focus-card {
+            background: #111827;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .focus-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            background: var(--panel-bg);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .focus-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .focus-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Dynamic Preview Panel */
+        .preview-panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: left;
+            display: none;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .preview-title h4 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        .download-btn {
+            background: var(--accent-color);
+            color: #0f172a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .download-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .preview-body p {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .preview-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #475569;
+            color: #fff;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 2rem 1rem; }
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="landing-container">
+    <header>
+        <h1>Architectural <span>Focus Areas</span></h1>
+        <p>I engineer software from chip to cloud. Select a target discipline below to instantly review tailored experience matrices and download specific target resumes.</p>
+    </header>
+
+    <!-- Interactive Focus Matrix -->
+    <div class="focus-grid">
+        <div class="focus-card" onclick="selectFocus('iot')">
+            <h3>🌐 Industrial IoT & Comms</h3>
+            <p>Telemetry mapping, hardware fieldbus integration, M2M products, and secure gateway cloud ingestion.</p>
+        </div>
+
+        <div class="focus-card" onclick="selectFocus('automation')">
+            <h3>🤖 Lab Automation frameworks</h3>
+            <p>Bare-metal provisioning, massive-scale BIOS/Firmware execution engines, and OS imaging pipelines.</p>
+        </div>
+
+        <div class="focus-card" onclick="selectFocus('security')">
+            <h3>🔒 Security & Lab Isolation</h3>
+            <p>Data isolation protocols, lab maturity compliance frameworks, and automated threat modeling analytics.</p>
+        </div>
+
+        <div class="focus-card" onclick="selectFocus('debug')">
+            <h3>🛠️ Support & Bare-Metal Debug</h3>
+            <p>Silicon optimization, low-level system benchmarking, ROCm infrastructure validation, and hardware test triage.</p>
+        </div>
+
+        <div class="focus-card" onclick="selectFocus('leadership')">
+            <h3>📈 Engineering Leadership</h3>
+            <p>Cross-team coordination, Lean Agile/Scrum direction, executive-level technical reporting, and architecture mapping.</p>
+        </div>
+
+        <div class="focus-card" onclick="selectFocus('web')">
+            <h3>💻 Web-Based Systems</h3>
+            <p>RESTful APIs, distributed data systems, Node.js applications, server deployments (IIS), and dashboard automation.</p>
+        </div>
+    </div>
+
+    <!-- Contextual Dynamic Preview Area -->
+    <div class="preview-panel" id="previewPanel">
+        <div class="preview-header">
+            <div class="preview-title">
+                <h4 id="selectedTitle">Selected Discipline</h4>
+            </div>
+            <a href="#" id="downloadLink" class="download-btn" download>
+                📥 Download Targeted Resume (PDF)
+            </a>
+        </div>
+        <div class="preview-body">
+            <p id="selectedDesc">Focus profile summary details load dynamically here...</p>
+            <div class="preview-tags" id="selectedTags"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Targeted profiles dataset
+    const focusProfiles = {
+        iot: {
+            title: "Industrial IoT & Communications Expert",
+            file: "nf_resume_iot.pdf",
+            desc: "Over 15 years architecting robust end-to-end telemetry solutions. Proven expertise implementing edge gateways, industrial fieldbus protocols, telemetry mapping architectures, and scaling data ingestion patterns safely from embedded endpoints to cloud infrastructure.",
+            tags: ["C/C++", "Python", "M2M", "Fieldbus", "Telemetry Layers", "Digi International", "WellAware"]
+        },
+        automation: {
+            title: "Lab Automation & Framework Architect",
+            file: "nf_resume_automation.pdf",
+            desc: "Pioneered automated BIOS, Firmware, and QFE update frameworks targeting massive enterprise hardware footprints (>1000 bare-metal targets). Built specialized Python tools integrated directly with web platforms, dramatically compressing hardware validation lifecycles.",
+            tags: ["Python", "CCTK", "Flask", "Windows PE", "DISM", "WDS", "PyTest", "IIS", "Dell Technologies"]
+        },
+        security: {
+            title: "Security Maturity & Data Isolation Lead",
+            file: "nf_resume_security.pdf",
+            desc: "Specialized in designing and enforcing zero-trust lab data isolation architectures and enterprise software maturity frameworks. Successfully built systemic automated threat modeling analytics tools and strict perimeter strategies for global research networks.",
+            tags: ["Lab Compliance Architecture", "Threat Modeling Automation", "API Security", "Network Isolation", "Data Control Architecture"]
+        },
+        debug: {
+            title: "Silicon Validation & Support Engineer",
+            file: "nf_resume_hardware_debug.pdf",
+            desc: "Expert low-level troubleshooter operating directly at the silicon-firmware boundary. Engineered comprehensive low-level validation suites via Python and AMD ROCm stacks to benchmark stability, monitor system behaviors, and handle silicon test isolation.",
+            tags: ["ROCm", "AI Hardware Validation", "UEFI", "C++", "Silicon Benchmarking", "AMD", "Bug Triage"]
+        },
+        leadership: {
+            title: "Principal Architect & Engineering Leader",
+            file: "nf_resume_leadership.pdf",
+            desc: "Skilled driver of collaborative cross-team engineering execution. Accomplished in embedding Lean Agile / Scrum methodologies across distributed hardware teams, translating deep low-level code anomalies to corporate management layers, and building engineering assets.",
+            tags: ["Lean Agile", "Scrum Master", "Confluence Architecture", "Cross-team Matrix Management", "Executive Technical Reporting"]
+        },
+        web: {
+            title: "Distributed Web-Based Platform Engineer",
+            file: "nf_resume_web_development.pdf",
+            desc: "Designed and distributed high-availability RESTful web systems supporting critical operational workflows. Proficient in spinning up Node.js backends, specialized Python microservices (Flask), and deploying through enterprise Microsoft IIS architectures securely.",
+            tags: ["Node.js", "Flask", "REST APIs", "Microsoft IIS", "MongoDB", "MySQL", "JavaScript"]
+        }
+    };
+
+    function selectFocus(key) {
+        const profile = focusProfiles[key];
+        if (!profile) return;
+
+        // Populate items inside the preview pane
+        document.getElementById('selectedTitle').innerText = profile.title;
+        document.getElementById('selectedDesc').innerText = profile.desc;
+        document.getElementById('downloadLink').href = `./resumes/${profile.file}`;
+        
+        // Populate specific target keywords
+        const tagContainer = document.getElementById('selectedTags');
+        tagContainer.innerHTML = '';
+        profile.tags.forEach(tagText => {
+            const span = document.createElement('span');
+            span.className = 'tag';
+            span.innerText = tagText;
+            tagContainer.appendChild(span);
+        });
+
+        // Reveal the element smoothly
+        const panel = document.getElementById('previewPanel');
+        panel.style.display = 'block';
+        
+        // Auto scroll focus into viewpoint for smaller devices
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+</script>
+</body>
+</html>
