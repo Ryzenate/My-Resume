@@ -317,7 +317,7 @@ Dear [Hiring Manager Name, or "Head of Engineering"],
 
 When an enterprise platform experiences a system-scale failure, the root cause rarely sits on the surface. Finding it requires a structured, battle-tested diagnostic mindset that understands kernel-level behavior just as clearly as cloud telemetry streams. Over a 20-year career, I have made a habit of stepping into resource gaps to solve these exact types of deep-system liabilities.
 
-During my tenure at Dell Technologies, I served as a Subject Matter Expert for UEFI, embedded security, and firmware hardening. I directed the end-to-end product lifecycle for security validation suites, implemented threat modeling automation via NLP to streamline vulnerability responses, and ensured our builds met strict government regulatory adherence and SBOM compliance.
+As Security Maturity Lead at Dell Technologies, I served as a Subject Matter Expert for UEFI, embedded security, and firmware hardening. I engineered enterprise-wide DevSecOps processes and workflows for BIOS/EC teams, designed and prototyped enterprise generative AI/OpenAI integrations, utilizing RAG, embeddings, and automated DFD creation to accelerate engineering knowledge retrieval, documentation workflows, and vulnerability responses.
 
 My technical foundation spans low-level WinDbg/SoftICE kernel debugging and WDM driver design up to high-availability data architectures like Honeywell's Sentience IoT platform. I understand the nuances of asynchronous data handling (AMQP, REST APIs), multi-threaded fleet management, and unifying fractured Windows/Linux operational pipelines using WSL2 and Docker containers.
 
