@@ -55,7 +55,7 @@
       text-decoration: underline;
     }
 
-    /* Embedded Sensor/Hardware Media Styles */
+    /* Embedded Sensor Media Styles */
     .sensor-showcase {
       display: flex;
       gap: 1.5rem;
@@ -158,19 +158,13 @@
     <p class="subtle">A collection of original systems and platforms I designed, architected, and delivered.</p>
 
     <h3>Watchport Manager (Invented)</h3>
-    <div class="sensor-showcase">
-      <div class="sensor-text">
-        <p style="margin-top: 0;">
-          Designed and developed one of the earliest IoT monitoring applications, shipped worldwide with Watchport sensors. Delivered real-time environmental and camera-based monitoring, alerting, and pioneering remote visibility through built-in HTTP/HTTPS dashboards (2001-2002).
-          <br>
-          <a class="view-link" href="javascript:void(0);" onclick="openLightbox('media/indi_WatchportMan.jpg')">[ Expand Application Screenshot ]</a>
-        </p>
-      </div>
-      <div class="sensor-thumb-container">
-        <img class="sensor-thumb" src="media/indi_WatchportMan.jpg" alt="Watchport Manager Screenshot" onclick="openLightbox('media/indi_WatchportMan.jpg')" />
-        <span class="thumb-caption">Click to view</span>
-      </div>
-    </div>
+    <p>
+      Designed and developed one of the earliest IoT monitoring applications, shipped worldwide with Watchport sensors. Delivered real-time
+      environmental and camera-based monitoring, alerting, and pioneering remote visibility through built-in HTTP/HTTPS dashboards
+      (2001-2002).
+      <br>
+      <a class="view-link" href="media/indi_WatchportMan.jpg" target="_blank">[ View Watchport Manager Screenshot ]</a>
+    </p>
 
     <h3>SensorServ Predictive Monitoring System (Invented)</h3>
     <p>
@@ -179,19 +173,10 @@
     </p>
 
     <h3>Watchport Camera Ecosystem</h3>
-    <div class="sensor-showcase">
-      <div class="sensor-text">
-        <p style="margin-top: 0;">
-          Engineered the full device ecosystem - drivers, firmware, and applications - supporting the Watchport camera line and enabling reliable, integrated deployments across diverse customer environments.
-          <br>
-          <a class="view-link" href="javascript:void(0);" onclick="openLightbox('media/WatchportManagerFlyer1.png')">[ Expand Product Flyer ]</a>
-        </p>
-      </div>
-      <div class="sensor-thumb-container">
-        <img class="sensor-thumb" src="media/WatchportManagerFlyer1.png" alt="Watchport Camera Ecosystem Flyer" onclick="openLightbox('media/WatchportManagerFlyer1.png')" />
-        <span class="thumb-caption">Click to view</span>
-      </div>
-    </div>
+    <p>
+      Engineered the full device ecosystem - drivers, firmware, and applications - supporting the Watchport camera line and enabling reliable,
+      integrated deployments across diverse customer environments.
+    </p>
 
     <h3>Modular Wireless PIR Motion Sensor Prototype (Invented)</h3>
     <div class="sensor-showcase">
@@ -199,11 +184,11 @@
         <p style="margin-top: 0;">
           Architected and engineered a custom, power-optimized wireless PIR (Passive Infrared) motion sensor prototype for rapid integration and testing. This system combines a PIC-based microcontroller running custom power-saving algorithms with an XBee wireless module for communication, ensuring extended operational life on battery power. Key accomplishments include the design of a modular pluggable sensor interface that facilitates rapid swapping of sensor types (PIR, environmental, or others) and the clever retrofitting of the entire hand-wired prototype, including its indicators (Red 'Motion Detected' and Green Link 'Status' LEDs), into a gutted Radio Shack sensor enclosure (3.25" x 2.5").
           <br>
-          <a class="view-link" href="javascript:void(0);" onclick="openLightbox('media/myPIRmotionSensor1.png')">[ Expand Prototype Layout &amp; Diagram ]</a>
+          <a class="view-link" href="javascript:void(0);" onclick="openLightbox()">[ Expand Prototype Layout &amp; Diagram ]</a>
         </p>
       </div>
       <div class="sensor-thumb-container">
-        <img class="sensor-thumb" src="media/myPIRmotionSensor1.png" alt="Modular Wireless PIR Motion Sensor Diagram" onclick="openLightbox('media/myPIRmotionSensor1.png')" />
+        <img class="sensor-thumb" src="media/myPIRmotionSensor1.png" alt="Modular Wireless PIR Motion Sensor Diagram" onclick="openLightbox()" />
         <span class="thumb-caption">Click to view</span>
       </div>
     </div>
@@ -215,13 +200,11 @@
 <!-- Lightbox Modal Container -->
 <div id="imageModal" class="modal-overlay" onclick="closeLightbox()">
   <span class="modal-close" onclick="closeLightbox()">&times;</span>
-  <img class="modal-content" id="modalTargetImg" src="" alt="Expanded View" />
+  <img class="modal-content" id="modalTargetImg" src="media/myPIRmotionSensor1.png" alt="Hardware Prototype Layout View" />
 </div>
 
 <script>
-  function openLightbox(imageSrc) {
-    const modalImg = document.getElementById("modalTargetImg");
-    modalImg.src = imageSrc;
+  function openLightbox() {
     document.getElementById("imageModal").style.display = "flex";
   }
   function closeLightbox() {
